@@ -4,7 +4,7 @@ async function getNote(noteID: string) {
   // this tells next to regenerate the page on the server if it's older than a certain number of seconds
   // if you want pre-rendered pages you can export a function called generateStaticParams
   const res = await fetch(
-    `http://127.0.0.1:8090/api/collections/notes/records/${noteID}`,
+    `https://sample-nextjs-pocketbase.fly.dev/api/collections/notes/records/${noteID}`,
     { next: { revalidate: 10 } }
   );
   const data = await res.json();
